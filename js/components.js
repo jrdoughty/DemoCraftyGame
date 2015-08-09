@@ -269,3 +269,15 @@ Crafty.c('CustomControls', {
         }
     }
 });
+
+
+Crafty.c('Item', {
+    description: "No description Added" + this.name,
+    selected: false,
+    Use: function() {
+        console.log("No Use Added");
+    },
+    UseWithElectricity: function() {
+        console.log("No Use With Electricity");
+    }
+});

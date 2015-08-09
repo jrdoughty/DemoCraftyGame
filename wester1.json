@@ -274,6 +274,32 @@
          "width":1,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "height":1,
+         "name":"Player",
+         "objects":[
+                {
+                 "height":0.5,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":2,
+                 "x":77,
+                 "y":214.5
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":1,
+         "x":0,
+         "y":0
         }],
  "orientation":"orthogonal",
  "properties":
@@ -285,7 +311,7 @@
  "tilesets":[
         {
          "firstgid":1,
-         "image":"western.png",
+         "image":"..\/BeyondYonder\/BeyondYonder\/BeyondYonderEp1\/BeyondYonderEp1\/BeyondYonderEp1.Shared\/western.png",
          "imageheight":448,
          "imagewidth":448,
          "margin":0,

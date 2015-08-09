@@ -63,6 +63,7 @@ var inventorySystem = {
         this.columns = Math.floor(width / this.tilesize);
         this.rows = Math.floor(height / this.tilesize);
         this.descriptionHeight = descriptHeight;
+        this.Close();
         return this;
     },
 
