@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>BeyondYonderEp1.Windows</title>
+
+    <!-- BeyondYonderEp1.Windows references -->
+    <link href="css/default.css" rel="stylesheet" />
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/default.js"></script>
+    <script src="js/crafty.js"></script>
+    <script src="js/MakeScene.js"></script>
+    <script src="js/SceneManager.js"></script>
+    <script src="js/testscene.js"></script>
+    <script src="js/sprites.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/inventorysystem.js"></script>
+    <script src="js/tiledmapbuilder.js"></script>
+    <script src="js/dialogues.js"></script>
+    <script src="js/create_mocks_module.js"></script>
+    <script src="mapjs/BigTile.js"></script>
+    <script src="chatjs/chattest.js"></script>
+    <script src="js/game.js"></script>
+    <style type="text/css">
+        #stage {
+            position: relative;
+            margin: auto auto;
+        }
+
+        #chat {
+            background-color: rgba(0,0,255,.7);
+            color: #FFF;
+            width: 368px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: 1000;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+            #chat .John {
+                background: url(sharedimages/guyinsuitsmall.png) no-repeat 0 0;
+                padding-left: 10px;
+                padding-right: 150px;
+                background-position: right;
+                height: 150px;
+            }
+
+            #chat .Emily {
+                background: url(sharedimages/galinsuitsmall.png) no-repeat 0 0;
+                padding-left: 10px;
+                padding-right: 150px;
+                background-position: right;
+                height: 150px;
+            }
+
+        #cr-stage {
+            margin: auto auto;
+        }
+        /* http://meyerweb.com/eric/tools/css/reset/
+           v2.0 | 20110126
+           License: none (public domain)
+        */
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="stage">
+        <div id="chat"></div>
+        <div id="cr-stage"></div>
+        <div id="fps"></div>
+    </div>
+</body>
+</html>

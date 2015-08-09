@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="18" height="18" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="Wild_West_D_Interior" tilewidth="16" tileheight="16">
+  <image source="sharedimages/Wild West Resources/Wild_West_D_Interior.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="1025" name="Wild_West_A4_Interior" tilewidth="16" tileheight="16">
+  <image source="sharedimages/Wild West Resources/Wild_West_A4_Interior.png" width="512" height="480"/>
+ </tileset>
+ <layer name="Background" width="18" height="18">
+  <data encoding="base64" compression="zlib">
+   eJzNktkNwkAMRFdi88nRATQAoQNogKORbGgEQiMcjUBohKMEBmktWcZr9pOPpxnZjjyO9uKdu4KWaavUNCV/A3cw7Dg3Ag/hn95W8i/QLZyb4bs56AnfL2wlPwBjMAEl01KpaUp+ChbItASrqOTX/runKc1WIIBa6AZsEz2uNZvdgUbo3uhxbeKslod2VGxeyxO8nadR7tLykJd5rB7PKmufnYdE1rORVdZop5Y1KHtTyv+Pdb+l/K5j5CRUq0mlu3Kz/3qHOdlz3uG/5XkDhT+jDg==
+  </data>
+ </layer>
+ <layer name="Set" width="18" height="18">
+  <data encoding="base64" compression="zlib">
+   eJztzz0OAVEQwPF5W7BX4ABo6DkAGh8tB0Djo+UgWAfBugK1jzNQs9vtPzGNTV4hSCRM8svMezNvkify/ZFC+sk3SSPimnudRwFFlCzzU2ZnmMNDQt9myTmta6ijhTa23O/M454l5xXW8JHRfoVc1bqPAcaY4Mz9JbZnz/mAI04oa79L7sVmPSws/7oye0OAEB1jGSR8bOztj0bDEWk6r+8ZsmP0hj3/+M2IAMDnGuQ=
+  </data>
+ </layer>
+ <layer name="Bars" width="18" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAP4GdmYBAA4k4mBoYuIO4G4h4mhDgh0MsIofWBag2AeCVQ7yogXg3Ea5gQ4oTAWkbs4p5AM7yYiPcPNQA7lexTJ8OcmUA9s4B4NhDPAeK5UDyPRLN2AtXvAuLdQLwHiPdC8T4SzbkJVH8LiG8D8R0gvgvF90g05ydQ/S8g/g3Ef4D4LxT/o3PcjoKhCQCgEh5+
+  </data>
+ </layer>
+</map>

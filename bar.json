@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="20" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="Wild_West_A4_Interior" tilewidth="16" tileheight="16">
+  <image source="sharedimages/Wild West Resources/Wild_West_A4_Interior.png" width="512" height="480"/>
+ </tileset>
+ <tileset firstgid="961" name="Wild_West_D_Interior" tilewidth="16" tileheight="16">
+  <image source="sharedimages/Wild West Resources/Wild_West_D_Interior.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Ground" width="40" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztlUEOgjAQRccNe/UkihdDvYTuKlxCdyIXUU+iXMBZtMl3Ak0HG60JP/l5FFoy/aX0SkQ39j0hoh7sJ7tVcpcR7TP9uBCiphOiGXuu5JFrO2X6cSFELbi9ZOcJEVWwN+y15YFdWrp7JVwP5Ypdsy/Wjae/rM/VI4n1dT3XsFL0RxnPPNyYkHwq0XZZOfryQm5FfeeOdw1hEzFnlPz+fk2Zn4k071iU+eH65gnmhyoSzA9lxvz+Jj88T2p6/0+mkJ9vHfv0zfx869inMb/P8ot1FofQtw9QL5ddZq0=
+  </data>
+ </layer>
+ <layer name="Walls" width="40" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztklEKgCAQRNcjZF0k6/530LqI5gHajw1ysL9MiH3wWASFYVxPRIHdxNB57lQS2cQeYmo4PeSo3cuQbzBElh1F23BGyFG7N5ky38xnxy6ie2neu7r6GiBH7d0K+VqBe5Ohi69yPIF7g//WG9yb3n0piqIoivIfTj0/WEY=
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="40" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztlbdOw1AUhm8UFxaQUmCiDNQFJDuBiTJTXgQSeAXKRucNKBudN4AF9gArZYENJCdZKR9SUCzF104CNkHKL33S1bn/uee34+gK8b+0rAmxopXnycC1h9eucbwTMAlTtj63mVZYiCzkIA/7+A48Zn57LMhWkG8a7wykIG3rc5sZUYSIQgzisKgLsQRh/Aro0CDrxRfVnfcysEnfFtywvnXwXPI+rsLuz2SQyYQEJGGXeXvQybld0At9knwGPlOSz4JT+s4gxzrv4Hki27NHPpV+rYLfqFxFQrxbiBWIh6o7p5tsPT7kM8hjQqJAssp8fmleFWJB/esUcm2TbaeG852T7SKAfHfMuIdWvtE2aIcOrViX7T9Qewwg3xsz3mGYmSMwCmNasS7b//jK5sP/rq7a0Qt3w6vH/fATpbjv0op3fZb1nFK63whNDv2/pVXOXoNmvvUWVV5fZ72hlO73w4CP+Q45+wgGyTCkyuvHrE8U7766gtcnhO1LFQ==
+  </data>
+ </layer>
+ <layer name="Tile Layer 3" width="40" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztlqsOwkAQADfcHQZsC5qXoZbC95fHhwDFtBaoZAxJmzpEbxN2kpGXzJndFTGG4OlEXvjGxsWu6ZN4kRRnOPexa/rsaMpxj4cf+wreHfGEZ7wo++eVnhvescSHsr5REHHoMeA4xC7qsqBniStc40ZZn2EYxr+QMH/TAWZwxT1VK7ypvkzY41Nlu7zNlrYsUt8H0ykRNQ==
+  </data>
+ </layer>
+</map>
