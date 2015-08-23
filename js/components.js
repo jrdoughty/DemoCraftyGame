@@ -244,7 +244,6 @@ Crafty.c('CustomControls', {
         this.upDown = this.isDown(Crafty.keys.UP_ARROW) || this.isDown(Crafty.keys.W);
 
         if (!this.paused()) {
-
             if (this.leftDown && this.upDown) {
                 this.x -= this.speed * .71;
                 this.y -= this.speed * .71;
@@ -281,3 +280,58 @@ Crafty.c('Item', {
         console.log("No Use With Electricity");
     }
 });
+
+Crafty.c('Spell', {
+    description: "No description Added" + this.name,
+    selected: false,
+    Use: function() {
+        console.log("No Use Added");
+    },
+    UseInInventory: function() {
+        console.log("No Use With Electricity");
+    }
+});
+
+Crafty.c('SpellCaster',{
+    spells : [],
+    activeSpell:{},
+    CastSpell: function(){
+        this.activeSpell.Cast();
+    },
+    init: function(){
+        this.bind('KeyDown',function(){
+            if(this.isDown(Crafty.keys.SPACE)){
+                this.CastSpell();
+            }
+        })
+    }
+});
+
+Crafty.c('FireLion',{
+    init: function(){
+        this.requires('SpellCaster');
+        this.spells.push({
+            id:'FireLion',
+            Cast: function(){
+                var lion = Crafty.e('2D, DOM, SpriteAnimation, FireLionRight');
+                    lion.attr({
+                        x: this.x + this.w,
+                        y: this.y + this.h,
+                        w: this.w,
+                        h: this.h,
+                        z: 100});
+                    lion.reel('FireLionRightAnim', 500, [[0,0],[1,0],[2,0],[3,0],
+                        [0,1],[1,1],[2,1],[3,1],
+                        [0,2],[1,2],[2,2],[3,2],
+                        [0,3],[1,3],[2,3],[3,3]]);
+                    lion.animate('FireLionRightAnim', 2);
+                    lion.bind('EnterFrame',function(){this.x++});
+            }
+        });
+
+        if(this.spells.length == 1){
+            this.activeSpell = this.spells[0];
+        }
+    },
+    
+})

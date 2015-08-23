@@ -40,9 +40,6 @@ var inventorySystem = {
 	 * @return {Object} this 
 	 */
     Init: function (offsetX, offsetY, width, height, tilesizepx, descriptHeight) {
-        Crafty.sprite(384, 304, "sharedimages/menu.jpg", {
-            InventoryBackground: [0, 0]
-        });
         this.background = Crafty.e("2D, DOM, InventoryBackground")
             .attr({ x: offsetX, y: offsetY, w: width, h: height, z: 5000 });
         this.description = Crafty.e("2D, DOM, Text")
@@ -274,6 +271,43 @@ var inventorySystem = {
             this.items[i].x = this.background.x + ((i % ((this.backgroundWidth - this.backgroundWidth % this.tilesize) / this.tilesize)) * this.tilesize);
             this.items[i].y = this.background.y + (Math.floor(i / ((this.backgroundWidth - this.backgroundWidth % this.tilesize) / this.tilesize)) * this.tilesize);
         }
+    },
+    /**
+     * CreateDemo
+     *  
+     * Creates several items for demo purposes
+     *
+     * Also takes the item from the visual list if the inventory is active
+     */
+    CreateDemo: function (){
+        var i = 0;
+        for (i = 0; i < 5; i = i + 1) { //JSLint barfs about making functions in loops, should make certain this is handled better in production code
+                this.AddItem(Crafty.e("2D, DOM, Item, greenhat").attr({
+                    description: "greenhat",
+                    Use: function() {
+                        console.log("Used Green Hat");
+                    }
+                }));
+                this.AddItem(Crafty.e("2D, DOM, Item, greentunic").attr({
+                    description: "greentunic",
+                    Use: function() {
+                        console.log("Used Green Tunic");
+                    }
+                }));
+                this.AddItem(Crafty.e("2D, DOM, Item, greenpants").attr({
+                    description: "greenpants",
+                    Use: function() {
+                        console.log("Used Green Pants");
+                    }
+                }));
+                this.AddItem(Crafty.e("2D, DOM, Item, greenshoes").attr({
+                    description: "greenshoes",
+                    Use: function() {
+                        inventorySystem.Close();
+                        console.log("Used Green Shoes");
+                    }
+                }));
+            }
     }
 
 
