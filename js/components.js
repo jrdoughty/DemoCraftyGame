@@ -296,7 +296,7 @@ Crafty.c('SpellCaster',{
     spells : [],
     activeSpell:{},
     CastSpell: function(){
-        this.activeSpell.Cast();
+        this.activeSpell.Cast(this);
     },
     init: function(){
         this.bind('KeyDown',function(){
@@ -312,20 +312,20 @@ Crafty.c('FireLion',{
         this.requires('SpellCaster');
         this.spells.push({
             id:'FireLion',
-            Cast: function(){
+            Cast: function(player){
                 var lion = Crafty.e('2D, DOM, SpriteAnimation, FireLionRight');
-                    lion.attr({
-                        x: this.x + this.w,
-                        y: this.y + this.h,
-                        w: this.w,
-                        h: this.h,
-                        z: 100});
-                    lion.reel('FireLionRightAnim', 500, [[0,0],[1,0],[2,0],[3,0],
-                        [0,1],[1,1],[2,1],[3,1],
-                        [0,2],[1,2],[2,2],[3,2],
-                        [0,3],[1,3],[2,3],[3,3]]);
-                    lion.animate('FireLionRightAnim', 2);
-                    lion.bind('EnterFrame',function(){this.x++});
+                lion.attr({
+                    x: player.x + player.w,
+                    y: player.y,
+                    w: player.w*2,
+                    h: player.h*2,
+                    z: 100});
+                lion.reel('FireLionRightAnim', 500, [[0,0],[1,0],[2,0],[3,0],
+                    [0,1],[1,1],[2,1],[3,1],
+                    [0,2],[1,2],[2,2],[3,2],
+                    [0,3],[1,3],[2,3],[3,3]]);
+                lion.animate('FireLionRightAnim', -1);
+                lion.bind('EnterFrame',function(){this.x += 2});
             }
         });
 
