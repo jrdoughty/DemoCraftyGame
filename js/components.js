@@ -313,19 +313,29 @@ Crafty.c('FireLion',{
         this.spells.push({
             id:'FireLion',
             Cast: function(player){
-                var lion = Crafty.e('2D, DOM, SpriteAnimation, FireLionRight');
+                var lion = Crafty.e('2D, DOM, SpriteAnimation, FireLionFull');
                 lion.attr({
                     x: player.x + player.w,
                     y: player.y,
-                    w: player.w*2,
-                    h: player.h*2,
-                    z: 100});
-                lion.reel('FireLionRightAnim', 500, [[0,0],[1,0],[2,0],[3,0],
+                    w: player.w,
+                    h: player.h,
+                    z: 100,
+                    killNextFrame:false
+                });
+                lion.reel('FireLionAnim', 500, [[0,0],[1,0],[2,0],[3,0],
                     [0,1],[1,1],[2,1],[3,1],
                     [0,2],[1,2],[2,2],[3,2],
                     [0,3],[1,3],[2,3],[3,3]]);
-                lion.animate('FireLionRightAnim', -1);
-                lion.bind('EnterFrame',function(){this.x += 2});
+                lion.animate('FireLionAnim', 1);
+                lion.bind('EnterFrame',function(){
+                    this.x += 2;
+                    if(this.killNextFrame){
+                        this.destroy();
+                    }else if(this.getReel().currentFrame === 15){
+                        this.killNextFrame = true;
+                    }
+
+                });
             }
         });
 

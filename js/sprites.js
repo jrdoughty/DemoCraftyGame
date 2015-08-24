@@ -36,3 +36,7 @@ Crafty.sprite(16, 16, "img/itemsprites.png", {
 Crafty.sprite(384, 304, "img/menu.jpg", {
     InventoryBackground: [0, 0]
 });
+
+Crafty.sprite(128, 128, "img/spells/firelion.png", {
+    FireLionFull: [0, 0]
+});
