@@ -39,7 +39,6 @@ var MakeScene = function(map, startX, startY) {
                         for (i = 0; i < tiledmap.getEntitiesInLayer('Solids').length; i = i + 1) {
                             entity = tiledmap.getEntitiesInLayer('Solids')[i];
                             entity.addComponent("Collision");
-                            entity.addComponent("Interactable");
                             entity.collision(entity.polygon);  
                         }
                     }
@@ -51,6 +50,16 @@ var MakeScene = function(map, startX, startY) {
                 });
             inventorySystem.Init(0, 0, StageW, StageH, 32, 100);
             inventorySystem.CreateDemo();
+            Crafty.e("2D, DOM, Item, greenhat").attr({
+                    x:64,
+                    y:270,
+                    w:30,
+                    h:30,
+                    description: "greenhat",
+                    Use: function() {
+                        console.log("Used Green Hat");
+                    }
+                })
 
         });
     }

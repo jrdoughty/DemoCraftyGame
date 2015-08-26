@@ -237,6 +237,7 @@ var inventorySystem = {
 	 */
     AddItem: function (item) {
         item.visible = this.IsActive();
+        item.inInventory = true;
 
         if (this.IsActive()) {
             item.z = this.background.z + this.items.length;

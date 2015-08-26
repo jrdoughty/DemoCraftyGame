@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 /**@
  * #Scenes
  * @category Setup
@@ -11,7 +11,6 @@
 Crafty.c("SceneManager", {
     StartScene: function (scene) {
         Crafty.scene("loading", function () {
-
             //black background with some loading text
             Crafty.background("#000");
             Crafty.e("2D, DOM, Text")

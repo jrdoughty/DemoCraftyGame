@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 /**@
     * #Interaction System
     * @category GamePlay
@@ -273,21 +273,25 @@ Crafty.c('CustomControls', {
 Crafty.c('Item', {
     description: "No description Added" + this.name,
     selected: false,
-    Use: function() {
-        console.log("No Use Added");
-    },
-    UseWithElectricity: function() {
-        console.log("No Use With Electricity");
-    }
-});
-
-Crafty.c('Spell', {
-    description: "No description Added" + this.name,
-    selected: false,
-    Use: function() {
-        console.log("No Use Added");
+    inInventory: false,
+    init: function(){
+        interactableObjects.push(this);
     },
     UseInInventory: function() {
+        console.log("No Use Added");
+    },
+    UseInInventoryWithSpell: function() {
         console.log("No Use With Electricity");
+    },
+    Interact: function(){
+        if(this.inInventory){
+            inventorySystem.AddItem(this);
+            console.log("Interacting with"+ this.name);
+        } else {
+
+        }
+    },
+    UseWithSpell: function(){
+
     }
 });
