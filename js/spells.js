@@ -6,7 +6,7 @@ Crafty.c('SpellCaster',{
     },
     init: function(){
         this.bind('KeyDown',function(){
-            if(this.isDown(Crafty.keys.SPACE)){
+            if(this.isDown(Crafty.keys.CTRL)){
                 this.CastSpell();
             }
         })
@@ -114,7 +114,12 @@ fireLion = function(player) {
             [2, 7],
             [3, 7]
         ]);
-    if (player.reel().indexOf("right") > -1) {
+    if(player.reel() === null){//If not populate, player hasn't moved and is still pointing down
+        frame = "FireLionAnimDown";
+        yVelocity = velocity;
+        lion.x = player.x;
+        lion.y = player.y + player.h;
+    }else if (player.reel().indexOf("right") > -1) {
         frame = "FireLionAnimRight";
         xVelocity = velocity;
         lion.x = player.x + player.w;
