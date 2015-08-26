@@ -5,11 +5,14 @@
     <title>Crafty Tiled Demo</title>
 
     <!-- BeyondYonderEp1.Windows references -->
+    <link href="css/default.css" rel="stylesheet" />
     <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/default.js"></script>
     <script src="js/crafty.js"></script>
     <script src="js/spells.js"></script>
     <script src="js/makescene.js"></script>
     <script src="js/scenemanager.js"></script>
+    <script src="js/testscene.js"></script>
     <script src="js/sprites.js"></script>
     <script src="js/components.js"></script>
     <script src="js/inventorysystem.js"></script>

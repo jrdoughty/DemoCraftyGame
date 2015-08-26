@@ -37,7 +37,6 @@ var Player = function(xPos,yPos){
         .reel("walkleftdown", 500, 3, 0, 3)
         .reel("walkrightup", 500, 3, 3, 3)
         .reel("walkleftup", 500, 3, 1, 3)
-        .setDialogues(DIALOGUES_DATA_SOURCE)
         .bind("Click", function() {
             this.showDialogue();
             chatDiv.style.height = "150px";
@@ -53,6 +52,18 @@ var Player = function(xPos,yPos){
         })
         .bind("KeyUp", function() {
             this.pauseAnimation();
+        })
+
+        $.ajaxSetup({
+            beforeSend: function(xhr){
+                if (xhr.overrideMimeType)
+                {
+                    xhr.overrideMimeType("application/json");
+                }
+            }
+        });
+        $.getJSON("chat/chattest.json", function(chat){
+            player.setDialogues(chat);
         })
     return player;
 }

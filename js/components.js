@@ -291,33 +291,3 @@ Crafty.c('Spell', {
         console.log("No Use With Electricity");
     }
 });
-
-Crafty.c('SpellCaster',{
-    spells : [],
-    activeSpell:{},
-    CastSpell: function(){
-        this.activeSpell.Cast(this);
-    },
-    init: function(){
-        this.bind('KeyDown',function(){
-            if(this.isDown(Crafty.keys.SPACE)){
-                this.CastSpell();
-            }
-        })
-    }
-});
-
-Crafty.c('FireLion',{
-    init: function(){
-        this.requires('SpellCaster');
-        this.spells.push({
-            id:'FireLion',
-            Cast: fireLion
-        });
-
-        if(this.spells.length == 1){
-            this.activeSpell = this.spells[0];
-        }
-    }
-    
-})

@@ -25,13 +25,8 @@ window.onload = function () {
             }
         }
     });
-    if(false){
-        $.getJSON("mapjs\/BigTile.json", function(map){
-            sceneManager.StartScene(MakeScene(map,50,0));
-        })
-    } else {
-        $.getJSON("wester1.json", function(map){
-            sceneManager.StartScene(MakeScene(map,50,0));
-        })
-    }
+    $.getJSON("wester1.json", function(map){
+        sceneManager.StartScene(MakeScene(map,50,0));
+    })
+    
 };

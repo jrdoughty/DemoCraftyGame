@@ -1,3 +1,33 @@
+Crafty.c('SpellCaster',{
+    spells : [],
+    activeSpell:{},
+    CastSpell: function(){
+        this.activeSpell.Cast(this);
+    },
+    init: function(){
+        this.bind('KeyDown',function(){
+            if(this.isDown(Crafty.keys.SPACE)){
+                this.CastSpell();
+            }
+        })
+    }
+});
+
+Crafty.c('FireLion',{
+    init: function(){
+        this.requires('SpellCaster');
+        this.spells.push({
+            id:'FireLion',
+            Cast: fireLion
+        });
+
+        if(this.spells.length == 1){
+            this.activeSpell = this.spells[0];
+        }
+    }
+    
+})
+
 fireLion = function(player) {
     var lion = Crafty.e('2D, DOM, SpriteAnimation, FireLionFull'),
         frame = "",
@@ -117,3 +147,14 @@ fireLion = function(player) {
 
     });
 }
+
+Crafty.c('Spell', {
+    description: "No description Added" + this.name,
+    selected: false,
+    Use: function() {
+        console.log("No Use Added");
+    },
+    UseInInventory: function() {
+        console.log("No Use With Electricity");
+    }
+});
