@@ -311,7 +311,7 @@
  "tilesets":[
         {
          "firstgid":1,
-         "image":"..\/BeyondYonder\/BeyondYonder\/BeyondYonderEp1\/BeyondYonderEp1\/BeyondYonderEp1.Shared\/western.png",
+         "image":"western.png",
          "imageheight":448,
          "imagewidth":448,
          "margin":0,
