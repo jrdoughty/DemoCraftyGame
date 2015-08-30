@@ -4,7 +4,8 @@ var StageW = 432,
     StageH = 432,
     stageDiv,
     chatDiv,
-    sceneManager;
+    sceneManager,
+    trace = false;
 
 
 

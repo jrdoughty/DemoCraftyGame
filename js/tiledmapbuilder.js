@@ -22,8 +22,9 @@ Crafty.c("TiledMapBuilder", {
     _isometric: null,
     _layers: null,
     _callback: null,
-    init: function () {
-        console.log("TiledMapBuilder.init");
+    init: function () {    
+        if(trace)
+            console.log("TiledMapBuilder.init");
         this._renderMethod = this.has(this.tileMapBuilderSetting.RENDER_METHOD_CANVAS) ?
     			this.tileMapBuilderSetting.RENDER_METHOD_CANVAS :
     			this.tileMapBuilderSetting.RENDER_METHOD_DOM;
@@ -42,7 +43,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @see http://www.mapeditor.org/ - Tiled Map Editor, export to JSON			 
 	 */
     setMapDataSource: function (source) {
-        console.log("TiledMapBuilder.setMapDataSource");
+        if(trace)
+            console.log("TiledMapBuilder.setMapDataSource");
         if (!this.isValid(source)) {
             throw new Error("Source is not valid.");
         }
@@ -66,7 +68,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @return {Object} this   	 	
 	 */
     createWorld: function (callback) {
-        console.log("TiledMapBuilder.createWorld");
+        if(trace)
+            console.log("TiledMapBuilder.createWorld");
         return this.createView(0, 0, this._source.width, this._source.height, callback);
     },
 
@@ -82,7 +85,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @return {Object} this   			
 	 */
     createView: function (startRow, startColumn, viewWidth, viewHeight, callback) {
-        console.log("TiledMapBuilder.createView");
+        if(trace)
+            console.log("TiledMapBuilder.createView");
         this._callback = callback;
 
         if (this.tileMapBuilderSetting.USE_WEB_WORKERS && typeof (Worker) !== "undefined") {
@@ -106,7 +110,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @return {Object} this   			
 	 */
     lazyLoadingForEntity: function (entity) {
-        console.log("TiledMapBuilder.lazyLoadingForEntity");
+        if(trace)
+            console.log("TiledMapBuilder.lazyLoadingForEntity");
         new Error("NotSupportedException");
     },
 
@@ -120,7 +125,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @see http://www.mapeditor.org/ - Tiled Map Editor		
 	 */
     getEntitiesInLayer: function (layerName) {
-        console.log("TiledMapBuilder.getEntitiesInLayer");
+        if(trace)
+            console.log("TiledMapBuilder.getEntitiesInLayer");
         if (!this.isLayer(layerName)) {
             return null;
         }
@@ -144,7 +150,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @return	Object<Crafty.e> tile 
 	 */
     getTile: function (row, column, layerName) {
-        console.log("TiledMapBuilder.getTile");
+        if(trace)
+            console.log("TiledMapBuilder.getTile");
         if (!this.isLayer(layerName)) {
             return null;
         }
@@ -161,7 +168,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @return {Object} layers		
 	 */
     getLayers: function () {
-        console.log("TiledMapBuilder.getLayers");
+        if(trace)
+            console.log("TiledMapBuilder.getLayers");
         return this._layers;
     },
 
@@ -181,7 +189,8 @@ Crafty.c("TiledMapBuilder", {
     * @return	String renderMethod - DOM or Canvas				
     */
     getRenderMethod: function () {
-        console.log("TiledMapBuilder.getRenderMethod");
+        if(trace)
+            console.log("TiledMapBuilder.getRenderMethod");
         return this._renderMethod;
     },
 
@@ -192,7 +201,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @see TiledMap.load 			
 	 */
     getSource: function () {
-        console.log("TiledMapBuilder.getSource");
+        if(trace)
+            console.log("TiledMapBuilder.getSource");
         return this._source;
     },
 
@@ -204,7 +214,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @see http://craftyjs.com/api/Crafty-isometric.html		
 	 */
     getIsometric: function () {
-        console.log("TiledMapBuilder.getIsometric");
+        if(trace)
+            console.log("TiledMapBuilder.getIsometric");
         return this._isometric;
     },
 
@@ -214,7 +225,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @return	boolean true or false		
 	 */
     isIsometric: function () {
-        console.log("TiledMapBuilder.isIsometric");
+        if(trace)
+            console.log("TiledMapBuilder.isIsometric");
         return this._source.orientation == MockModule.settings.ISOMETRIC_DIAMOND ||
     		this._source.orientation == MockModule.settings.ISOMETRIC_STAGGERED;
     },
@@ -226,7 +238,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @return {String} (orthogonal || isometric || staggered)		
 	 */
     getOrientation: function () {
-        console.log("TiledMapBuilder.getOrientation");
+        if(trace)
+            console.log("TiledMapBuilder.getOrientation");
         return this._source.orientation;
     },
 
@@ -237,7 +250,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @return {boolean} true or false
 	 */
     isValid: function (source) {
-        console.log("TiledMapBuilder.isValid");
+        if(trace)
+            console.log("TiledMapBuilder.isValid");
         var isValid = true;
 
         if (!source || 											// is not undefined
@@ -257,7 +271,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @return {Object} this
 	 */
     createTiles: function (source) {
-        console.log("TiledMapBuilder.createTiles");
+        if(trace)
+            console.log("TiledMapBuilder.createTiles");
         for (var idx = 0; idx < source.tilesets.length; idx++) {
             this.createSprite(source.tilesets[idx]);
         };
@@ -272,7 +287,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @see http://craftyjs.com/api/Crafty-sprite.html - Crafty.sprite() documentation
 	 */
     createSprite: function (tileset) {
-        console.log("TiledMapBuilder.createSprite");
+        if(trace)
+            console.log("TiledMapBuilder.createSprite");
         return Crafty.sprite(tileset.tilewidth, tileset.tileheight, tileset.image, this.arrangeTiles(tileset), tileset.margin, tileset.margin);
     },
 
@@ -284,7 +300,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @return {Object} map - {tile1:[posX, posY], tile2:[posX, posY], ...}	
 	 */
     arrangeTiles: function (tileset) {
-        console.log("TiledMapBuilder.arrangeTiles");
+        if(trace)
+            console.log("TiledMapBuilder.arrangeTiles");
 
         var numberOfColumns = Math.round(tileset.imagewidth / (tileset.tilewidth + tileset.margin));
         var numberOfRows = Math.round(tileset.imageheight / (tileset.tileheight + tileset.margin));
@@ -308,7 +325,8 @@ Crafty.c("TiledMapBuilder", {
     * @param {Object} source - object from JSON file exported by Tiled Map Editor			
     */
     setIsometric: function (source) {
-        console.log("TiledMapBuilder.setIsometric");
+        if(trace)
+            console.log("TiledMapBuilder.setIsometric");
         this._isometric = Crafty.isometric.size(source.tilewidth, source.tileheight);
     },
 
@@ -318,8 +336,9 @@ Crafty.c("TiledMapBuilder", {
 	 * @param {Object} mockEntities, keys are layerName, contains MockObject or 0	
 	 * @return {Object} entities, {layer1Name:entities, layer2Name: entities, ...}
 	 */
-    createEntitiesFromMock: function (mockEntities) { //TODO - refactor method
-        console.log("TiledMapBuilder.createEntitiesFromMock");
+    createEntitiesFromMock: function (mockEntities) { //TODO - refactor method    if(trace)
+        if(trace)
+            console.log("TiledMapBuilder.createEntitiesFromMock");
         var layers = {},
             layer,
             entity,
@@ -412,7 +431,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @return boolean
 	 */
     isLayer: function (layerName) {
-        console.log("TiledMapBuilder.isLayer");
+        if(trace)
+            console.log("TiledMapBuilder.isLayer");
         return this._layers[layerName] ? true : false;
     },
 
@@ -424,7 +444,8 @@ Crafty.c("TiledMapBuilder", {
 	 * @return {Object} layer
 	 */
     getLayerFromSource: function (layerName) {
-        console.log("TiledMapBuilder.getLayerFromSource");
+        if(trace)
+            console.log("TiledMapBuilder.getLayerFromSource");
         for (var idx = 0; idx < this._source.layers.length; idx++) {
             if (this._source.layers[idx].name == layerName) {
                 return this._source.layers[idx];
@@ -441,7 +462,8 @@ Crafty.c("TiledMapBuilder", {
    * @param {Function} callback - callback function call when world is done 
    */
     doInBackground: function (data) {
-        console.log("TiledMapBuilder.doInBackground");
+        if(trace)
+            console.log("TiledMapBuilder.doInBackground");
         var self = this;
         var worker = new Worker(this.tileMapBuilderSetting.PATH_TO_WORKER_SCRIPT);
         worker.postMessage(data);
@@ -459,7 +481,8 @@ Crafty.c("TiledMapBuilder", {
      * It fires defined callback function   
      */
     fireCallback: function () {
-        console.log("TiledMapBuilder.fireCallback");
+        if(trace)
+            console.log("TiledMapBuilder.fireCallback");
         if (typeof this._callback != 'undefined') {
             this._callback.call(this, this);
         }
