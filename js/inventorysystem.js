@@ -89,6 +89,7 @@ var inventorySystem = {
         this.description.y = this.background.y + this.background.h - this.description.h;
         this.description.visible = true;
         this.background.visible = true;
+        this.background.alpha = .7;
 
         for (i = 0, max = this.items.length; i < max; i = i + 1) {
             if (i === 0) {
@@ -137,18 +138,7 @@ var inventorySystem = {
             this.items[this.selectedItemIndex].Use();
         }
     },
-
-    /**
-	 * UseItemFromMenuWithElectricity
-	 *  
-     * if inventory is active, use the selected item's Electricity Function
-	 */
-    UseItemFromMenuWithElectricity: function () {
-        if (this.IsActive()) {
-            this.items[this.selectedItemIndex].UseWithElectricity();
-        }
-    },
-
+    
 
     /**
 	 * MoveSelectedItem
@@ -224,7 +214,7 @@ var inventorySystem = {
                     }
                     break;
             }
-        }
+        } 
     },
 
 

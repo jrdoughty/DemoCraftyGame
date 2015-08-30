@@ -26,6 +26,13 @@ var Player = function(xPos,yPos){
                     this.y = player.y - (this.h - player.h);
                     player.pauseAnimation();
                 })
+                .onHit("Item", function() {
+                    player.x = player.from.x;
+                    player.y = player.from.y;
+                    this.x = player.x - (this.w - player.w);
+                    this.y = player.y - (this.h - player.h);
+                    player.pauseAnimation();
+                })
                 .Interactor(Paused)
         })
         .CustomControls(2, Paused)

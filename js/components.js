@@ -274,7 +274,10 @@ Crafty.c('Item', {
     description: "No description Added" + this.name,
     selected: false,
     inInventory: false,
+    name:"Item",
     init: function(){
+    },
+    MakeInteractable: function(){
         interactableObjects.push(this);
     },
     UseInInventory: function() {
@@ -284,12 +287,30 @@ Crafty.c('Item', {
         console.log("No Use With Electricity");
     },
     Interact: function(){
-        if(this.inInventory){
-            inventorySystem.AddItem(this);
-            console.log("Interacting with"+ this.name);
-        } else {
+        inventorySystem.AddItem(this);
+        console.log("Interacting with "+ this.name+ " outside of inventory");
+        this.addComponent("InventoryItem");
+        this.removeComponent("Item");
+    },
+    UseWithSpell: function(){
 
-        }
+    }
+});
+
+Crafty.c('InventoryItem', {
+    selected: false,
+    inInventory: false,
+    init: function(){
+        this.name = name || "Base Item",
+        this.description = this.description || "No description Added" + this.name;
+    },
+    MakeInteractable: function(){
+        interactableObjects.push(this);
+    },
+    Interact: function(){
+        console.log("Interacting with "+ this.name);
+        this.addComponent("Item");
+        this.removeComponent("InventoryItem");
     },
     UseWithSpell: function(){
 

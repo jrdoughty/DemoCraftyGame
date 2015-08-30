@@ -49,7 +49,7 @@ var MakeScene = function(map, startX, startY) {
                     }
                 });
             inventorySystem.Init(0, 0, StageW, StageH, 32, 100);
-            inventorySystem.CreateDemo();
+            //inventorySystem.CreateDemo();
             Crafty.e("2D, DOM, Item, greenhat").attr({
                     x:64,
                     y:270,
@@ -59,7 +59,7 @@ var MakeScene = function(map, startX, startY) {
                     Use: function() {
                         console.log("Used Green Hat");
                     }
-                })
+                }).MakeInteractable();
 
         });
     }
