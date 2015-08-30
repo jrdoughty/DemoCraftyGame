@@ -36,7 +36,8 @@ var MockModule = {
 	 * @return {Object} this 
 	 */
 	init: function (startRow, startColumn, viewWidth, viewHeight, renderMethod, source) {
-	    console.log("MockModule.init");
+		if (trace)
+	    	console.log("MockModule.init");
 		this._startRow = startRow;
 		this._startColumn = startColumn;
 		this._viewWidth = viewWidth;
@@ -53,7 +54,8 @@ var MockModule = {
 	 * @return {Object} layers, {layer1name:[entities], layer1name:[entities], ...}		
 	 */
 	createMockEntities: function () {
-	    console.log("MockModule.createMockEntities");
+		if (trace)
+	    	console.log("MockModule.createMockEntities");
 	    var layers = {},
 	        layer = 0,
 	        entities = [];
@@ -79,7 +81,8 @@ var MockModule = {
 	 * @return {Array} entities		
 	 */
 	createMockPolygonsInLayer: function (layer) {
-	    console.log("MockModule.createMockPolygonsInLayer");
+		if (trace)
+	    	console.log("MockModule.createMockPolygonsInLayer");
 	    var max = layer.objects.length,// Start of Object Layer Figure
         entities = [],
 	        i=0;
@@ -97,7 +100,8 @@ var MockModule = {
 	 * @return {Array} entities		
 	 */
 	createMockEntitiesInLayer: function (layer) {
-	    console.log("MockModule.createMockEntitiesInLayer");
+		if (trace)
+	    	console.log("MockModule.createMockEntitiesInLayer");
 	    var indexes = this.getIndexes(layer);// Start of Object Layer Figure
 
 	    var entities = [];
@@ -119,7 +123,8 @@ var MockModule = {
 	* @return {Array} indexes - [0,1,10,11,12,15,20,21,22,23,24,25,26]	
 	*/
 	getIndexes: function (layer) {
-	    console.log("MockModule.getIndexes");
+		if (trace)
+	    	console.log("MockModule.getIndexes");
 	    var idxs = [],
             row = 0,
             indexOfStartTile = 0;
@@ -139,7 +144,8 @@ var MockModule = {
 	 * @return {Object} mock, {head:String, x:number, y:number} 
 	 */
 	createMockEntity: function (layer, dataIndex) {
-	    console.log("MockModule.createMockEntity");
+		if (trace)
+	    	console.log("MockModule.createMockEntity");
 	    var column = dataIndex % layer.width;
 	    var row = Math.floor((dataIndex / layer.width));
 	    var mock = {
@@ -157,7 +163,8 @@ var MockModule = {
 	 * @return {Object} mock, {head:String, x:number, y:number} 
 	 */
 	createMockPolygon: function (layer, index) {
-	    console.log("MockModule.createMockPolygon");
+		if (trace)
+	    	console.log("MockModule.createMockPolygon");
 	    var mock,
 	        object = layer.objects[index],
             i = 0,
@@ -194,7 +201,8 @@ var MockModule = {
 	 * @param {Object} mockEntity 
 	 */
 	setPosition: function (column, row, mockEntity) {
-	    console.log("MockModule.setPosition");
+		if (trace)
+	    	console.log("MockModule.setPosition");
 		switch( this._source.orientation ){
 			
 			case this.settings.ORTHOGONAL:
@@ -230,7 +238,8 @@ var MockModule = {
 	* @return {Array} indexes - [0,1,2,3,4,5,6,7,8,9,..]	
 	*/
 	makeSequence: function (from, to) {
-	    console.log("MockModule.makeSequence");
+		if (trace)
+	    	console.log("MockModule.makeSequence");
     	var numbers = [];       
     	for(var idx = from; idx < to; idx++){
     		numbers.push(idx);
@@ -247,7 +256,8 @@ var MockModule = {
 	 * @return {Integer} index
 	 */
 	getTileIndex: function (row, column, layer) {
-	    console.log("MockModule.getTileIndex");
+		if (trace)
+	    	console.log("MockModule.getTileIndex");
 		return ((layer.width) * row) + column;	
 	},
 	
@@ -259,7 +269,8 @@ var MockModule = {
 	 * @return {Object} position {x:number, y:number}
 	 */
 	px2pos: function (left, top, source) {
-	    console.log("MockModule.px2pos");
+		if (trace)
+	    	console.log("MockModule.px2pos");
 		return{
 			x:-Math.ceil(-left / source.tilewidth - (top%2) * 0.5),
             y:top / source.tileheight * 2
